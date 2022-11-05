@@ -1,0 +1,950 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+   margin: 0;
+   padding: 0;
+   font-family: Helvetica, sans-serif;
+}
+
+.container {
+    max-width: 1290px;
+    margin: 0 auto;
+}
+
+#salonn {
+	position: relative; /* важно - для того, чтобы псевдоэлемент позиционировался относительно этого элемента */
+	border-top: 100px solid transparent;
+	margin-top: -100px;
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+}
+#salonn:before {
+	content: "";
+	position: absolute;
+	top: -2px; /* равен по модулю толщине border */
+	left: 0;
+	right: 0;
+	border-top: 0px solid #ccc; /* собственно то, ради чего всё затевалось */
+}
+
+#manicure {
+	position: relative; /* важно - для того, чтобы псевдоэлемент позиционировался относительно этого элемента */
+	border-top: 100px solid transparent;
+	margin-top: -100px;
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+}
+#manicure:before {
+	content: "";
+	position: absolute;
+	top: -2px; /* равен по модулю толщине border */
+	left: 0;
+	right: 0;
+	border-top: 0px solid #ccc; /* собственно то, ради чего всё затевалось */
+}
+#pedicure {
+	position: relative; /* важно - для того, чтобы псевдоэлемент позиционировался относительно этого элемента */
+	border-top: 100px solid transparent;
+	margin-top: -100px;
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+}
+#pedicure:before {
+	content: "";
+	position: absolute;
+	top: -2px; /* равен по модулю толщине border */
+	left: 0;
+	right: 0;
+	border-top: 0px solid #ccc; /* собственно то, ради чего всё затевалось */
+}
+#stock {
+	position: relative; /* важно - для того, чтобы псевдоэлемент позиционировался относительно этого элемента */
+	border-top: 100px solid transparent;
+	margin-top: -100px;
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+}
+#stock:before {
+	content: "";
+	position: absolute;
+	top: -2px; /* равен по модулю толщине border */
+	left: 0;
+	right: 0;
+	border-top: 0px solid #ccc; /* собственно то, ради чего всё затевалось */
+}
+#workers {
+	position: relative; /* важно - для того, чтобы псевдоэлемент позиционировался относительно этого элемента */
+	border-top: 100px solid transparent;
+	margin-top: -100px;
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+}
+#workers:before {
+	content: "";
+	position: absolute;
+	top: -2px; /* равен по модулю толщине border */
+	left: 0;
+	right: 0;
+	border-top: 0px solid #ccc; /* собственно то, ради чего всё затевалось */
+}
+#connect {
+	position: relative; /* важно - для того, чтобы псевдоэлемент позиционировался относительно этого элемента */
+	border-top: 100px solid transparent;
+	margin-top: -100px;
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+}
+#connect:before {
+	content: "";
+	position: absolute;
+	top: -2px; /* равен по модулю толщине border */
+	left: 0;
+	right: 0;
+	border-top: 0px solid #ccc; /* собственно то, ради чего всё затевалось */
+}
+
+/*–––––HEADR––––––––––––––––––––––––––––––––––––––––––––––*/
+
+.header {
+    background: rgb(40, 0, 80);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999999;
+}
+
+.header-container {
+    margin: 0px 15px 0px 15px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-logo {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 40px;
+    color: #cc30ff;
+}
+
+.logo-subtitle {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+.menu {
+    display: flex;
+}
+
+.header-list {
+    display: flex;
+    margin: 0 20px 0 0;
+}
+.menu li {
+    list-style-type: none;
+    margin: 5px 15px;
+    align-items: center;
+}
+.header-list a {
+    text-decoration: none;
+    color: white;
+    font-size: 17px;
+}
+.header-list a:hover{
+    color: #cc30ff;
+}
+
+@media (max-width: 991px) {
+
+    .header-container{
+        padding: 10px 0;
+    }
+
+    .logo-logo {
+        font-size: 33px;
+    }
+
+    .burger {
+        width: 25px;
+        height: 20px;
+        cursor: pointer;
+        position: relative;
+        margin: 0 15px 0 0;
+        z-index: 99999;
+        transition: 0.3s;
+    }
+
+    .burger-line {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: white;
+        position: absolute;
+        left: 0;
+        transition: 0.2s all linear;
+    }
+
+    .burger:hover {
+        opacity: 1;
+    }
+
+    .b-line1 {
+        top: 0;
+    }
+    .b-line2 {
+        top: 9.2px;
+    }
+    .b-line3 {
+        bottom: 0;
+    }
+
+    .burger.active .b-line2 {
+        opacity: 0;
+    }
+
+    .burger.active .b-line1 {
+        transform: translate(0px, 9px) rotate(45deg);
+    }
+
+
+    .burger.active .b-line3 {
+        transform: translate(0px, -9px) rotate(-45deg);
+    }
+
+    .menu {
+        position: fixed;
+        top: 0px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background: black;
+        z-index: 2000;
+        margin: 0px 0 0 0;
+        flex-direction: column;
+        align-items: center;
+        visibility: hidden;
+        opacity: 0.91;
+    }
+
+    .menu.active {
+        visibility: inherit;
+    }
+
+    .header-list {
+        text-align: start;
+        flex-direction: column;
+        width: 100%;
+        z-index: 3;
+        margin: 70px 0 70px 50px;
+    }
+
+    .header-list a {
+        color: white;
+    }
+
+    .header-list a {
+        display: block;
+        align-items: center;
+        padding: 0;
+        font-size: 27px;
+        margin: 15px 5px;
+        font-weight: 100;
+    }
+
+    .header-list li {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+/*––––––––––HELLO–––––––––––––––––––––––––––––––––––––––––*/
+
+.hello {
+    margin: 75px 0 0 0;
+    background:linear-gradient(#ceabd8dd, #ceabd8dd), url('../img/arno-smit-sKJ7zSylUao-unsplash.jpg') no-repeat;
+    background-size: cover;
+    height: 700px;
+    position: relative;
+}
+
+.hello-container {
+    margin: 0 15px 0 15px;
+    position: relative;
+}
+
+.hello-img {
+    position: absolute;
+    top: 100px;
+    left: 0;
+}
+
+.hello-img img {
+    width: 600px;
+    height: auto;
+}
+
+.hello-text {
+    position: absolute;
+    right: 200px;
+    top: 150px;
+    width: 390px;
+    margin: 0 0 0 15px;
+}
+
+.hello-title {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.hello-subtitle {
+    margin: 20px 0 30px 0;
+    font-size: 20px;
+}
+
+.hello-subtitle p {
+    margin: 0 0 15px 0;
+}
+
+.hello-button {
+    font-size: 20px;
+    color: white;
+    background: #cc30ff; 
+    width: 240px;
+    padding: 20px 0 20px 0;
+    border-radius: 40px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 700;
+    position: relative;
+    z-index: 2;
+}
+
+.hello-button:hover {
+    background: #d34fff;
+}
+
+@media (max-width: 1000px) {
+    .hello-img {
+        position: absolute;
+        left: -100px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .hello-text {
+        right: 50px;
+    }
+    
+}
+
+@media (max-width: 870px) {
+    .hello-img {
+        position: absolute;
+        left: -250px;
+    }
+}
+
+@media (max-width: 700px) {
+    .hello {
+        height: 640px;
+    }
+
+    .hello-img img {
+        width: 600px;
+        height: auto;
+        display: none;
+    }
+
+    .hello-text {
+        position: relative;
+        right: 0;
+        top: 70px;
+        margin: 0 auto;
+        width: 100%;
+    }
+    
+    .hello-title {
+        font-size: 45px;
+        font-weight: 700;
+        text-align: center;
+        margin: 0 0 30px 0;
+    }
+    
+    .hello-subtitle {
+        margin: 20px 0 30px 0;
+        font-size: 25px;
+        text-align: center;
+    }
+    
+    .hello-button {
+        width: auto;
+        padding: 25px 0 25px 0;
+    }
+}
+
+@media (max-width: 490px) {
+    .hello-text {
+        top: 40px;
+        width: 100%;
+    }
+    
+    .hello-title {
+        font-size: 35px;
+        font-weight: 700;
+        margin: 0 0 30px 0;
+    }
+    
+    .hello-subtitle {
+        margin: 20px 0 60px 0;
+        font-size: 22px;
+    }
+    
+    .hello-subtitle p {
+        margin: 0 0 20px 0;
+    }
+    
+    .hello-button {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 300px) {
+    .hello-text {
+        top: 20px;
+    }
+}
+
+/*––––––––––DESIGNATION–––––––––––––––––––––––––––––––––––––––––*/
+
+.designation {
+    padding: 40px 0 0 0;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.designation-img img{
+    width: 64px;
+    height: auto;
+    padding: 0 0 0px 0;
+}
+
+.designation-text {
+    font-size: 45px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: white;
+    padding: 10px 0 0 0;
+}
+
+@media (max-width: 490px) {
+    .designation-text {
+        font-size: 27px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: white;
+    }
+}
+
+/*––––––––––SALON–––––––––––––––––––––––––––––––––––––––––*/
+
+.salon {
+    background:linear-gradient(#141221dd, #141221dd), url('../img/salon.avif') no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.salon-content {
+    padding: 30px 0 30px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    margin: 20px 10px 0 10px;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    background: white;
+    border-radius: 15px;
+}
+
+.card-title {
+    text-align: center;
+    font-size: 20px;
+    padding: 15px 0 15px 0;
+}
+
+.card-img {
+    text-align: center;
+}
+
+.card-img img{
+    width: 280px;
+    height: 243px;
+    object-fit: cover;
+    margin: 0 auto;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0 0 0;
+}
+
+.card-price {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    color: black;
+}
+
+.card-price-one {
+    background-color: #f9e8ff;
+    padding: 4px 15px 4px 15px;
+}
+
+.card-price-two {
+    background-color: white;
+    padding: 3px 15px 3px 15px;
+}
+
+.card-price-tree {
+    background-color: #f9e8ff;
+    padding: 3px 15px 3px 15px;
+}
+
+.card-button-wrapper {
+    margin: 0 auto;
+}
+
+.card-button {
+    text-align: center;
+    margin: 30px 0 20px 0;
+    padding: 17px 0 17px 0;
+    border-radius: 30px;
+    font-size: 18px;
+    color: white;
+    background: #cc30ff;
+    width: 261px;
+    cursor: pointer;
+}
+
+.card-button:hover {
+    background: #d34fff;
+}
+
+/*––––––––––MANICURE–––––––––––––––––––––––––––––––––––––––––*/
+
+.title-manicure {
+    color: black;
+}
+
+.card.card-manicure {
+    background: #18083a;
+}
+
+.card-title-manicure {
+    color: white;
+}
+
+.manicure-one {
+    background: #33205b;
+    color: white;
+}
+
+.manicure-two {
+    background: #18083a;
+    color: white;
+}
+
+/*––––––––––PEDICURE–––––––––––––––––––––––––––––––––––––––––*/
+
+.pedicure {
+    background:linear-gradient(#141221dd, #141221dd), url('../img/henry-co-OpjlRo-31SI-unsplash.jpg') no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.pedicure-content {
+    padding: 30px 0 30px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.price-white {
+    background: white;
+}
+
+/*––––––––––SLICK–––––––––––––––––––––––––––––––––––––––––*/
+
+.stock-container {
+    margin: 0 15px;
+}
+
+.designation-stock {
+    margin: 0 0 20px 0;
+}
+
+.title-stock {
+    color: #cc30ff;
+}
+
+.stock-slick-container {
+    height: 300px;
+    max-width: 800px;
+    margin: 0 auto 250px auto;
+    border-radius: 15px;
+}
+
+.stock-slick-item {
+    overflow: hidden;
+    padding: 0 0 300px 0;
+    position: relative;
+    border-radius: 15px;
+}
+
+.stock-slick-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 15px;
+}
+
+.slick-arrow {
+    font-size: 0;
+    padding: 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.slick-prev {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    z-index: 2;
+    background: url('../img/left-arrow.png') no-repeat;
+    background-size: 40px;
+    background-position: center;
+}
+
+.slick-next {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    z-index: 2;
+    background: url('../img/right-arrow.png') no-repeat;
+    background-size: 40px;
+    background-position: center;
+}
+
+.stock-text {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 800px;
+    height: 180px;
+    background: rgba(148, 137, 137, .5);
+}
+
+.stock-text-title {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 25px;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px 0 10px 0;
+}
+
+.stock-text-title span {
+    color: #cc30ff;
+}
+
+.stock-button {
+    font-size: 20px;
+    color: white;
+    background: #cc30ff; 
+    width: 260px;
+    padding: 17px 0 17px 0;
+    border-radius: 40px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    margin: 0 auto;
+}
+
+.stock-button:hover {
+    background:#d34fff ;
+}
+
+@media (max-width: 570px) {
+    .stock-text-title {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 22px;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 30px 10px 10px 10px;
+    }
+    .stock-button {
+        font-size: 17px;
+    }
+    .stock-text {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        max-width: 800px;
+        height: 200px;
+        background: rgba(148, 137, 137, .5);
+    }
+}
+
+@media (max-width: 310px) {
+    .stock-text-title {
+        font-size: 19px;
+    }
+
+    .stock-button {
+        width: 200px;
+    }
+}
+
+/*––––––––––WORKERS–––––––––––––––––––––––––––––––––––––––––*/
+
+.workers {
+    background:linear-gradient(#141221dd, #141221dd), url('../img/guilherme-petri-PtOfbGkU3uI-unsplash.jpg') no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.workers-container {
+    margin: 0 15px;
+    padding: 0 0 20px 0;
+}
+
+.price-white {
+    background: white;
+}
+
+.card-workers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card-workers-item {
+    margin: 20px 10px 0 10px;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    background: white;
+    border-radius: 15px;
+}
+
+.card-worker-title {
+    margin: 25px 0 15px 0;
+}
+
+.card-worker-title-one {
+    text-align: center;
+    font-size: 20px;
+    margin: 0 0 5px 0;
+}
+.card-worker-title-two {
+    text-align: center;
+    font-size: 16px;
+}
+
+.card-worker-img {
+    text-align: center;
+}
+
+.card-worker-img img{
+    width: 280px;
+    height: 243px;
+    object-fit: cover;
+    margin: 0 auto;
+}
+
+.card-worker-text {
+    text-align: center;
+    font-size: 16px;
+    margin: 20px 0 20px 0;
+}
+
+.card-worker-button {
+    text-align: center;
+    font-size: 17px;
+    color: white;
+    background: #cc30ff; 
+    width: 230px;
+    padding: 17px 0 17px 0;
+    border-radius: 40px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    margin: 0 auto 20px auto;
+}
+
+.card-worker-button:hover {
+    background: #d34fff;
+}
+
+/*––––––––––CONNEKT–––––––––––––––––––––––––––––––––––––––––*/
+
+.connect {
+    background: rgba(148, 137, 137, .2);
+}
+
+.connect-container {
+    margin: 0 15px 0 15px;
+    padding: 40px 0 20px 0;
+}
+
+.connect-wrapper {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    max-width: 500px;
+    padding: 70px 0;
+    border-radius: 20px;
+    margin: 0 auto;
+}
+
+.connect-text {
+    font-size: 30px;
+    margin: 0 10px 30px 10px;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.input{
+    width: 60%;
+    height: 30px;
+    margin: 10px auto 10px auto;
+    border: none;
+    border-bottom: #cc30ff solid 1px;
+    outline: none;
+    font-size: 20px;
+    padding: 0 10px 10px 10px;
+}
+
+.big-input {
+    max-width: 70%;
+    height: 100px;
+    padding: 10px 10px 0 10px;
+    margin: 10px auto 10px auto;
+    outline: none;
+    font-size: 20px;
+    border: #cc30ff solid 1px;
+    font-family: helvetica;
+    resize: none;
+    
+}
+
+.connect-container button {
+    width: 220px;
+    height: 50px;
+    font-size: 17px;
+    border-radius: 40px;
+    margin: 20px auto 0 auto;
+    color: white;
+    border: none;
+    background: #cc30ff;
+    cursor: pointer;
+}
+
+.connect-container button:hover {
+    background: #d34fff;
+}
+
+/*––––––––––FOOTER–––––––––––––––––––––––––––––––––––––––––*/
+
+.footer {
+    background: #33205b;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0 20px 0;
+    margin: 0 15px 0 15px;
+    flex-wrap: wrap;
+}
+
+.soc {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    margin: 15px 40px 0 0;
+}
+
+.soc img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: 0 10px 0 0;
+    cursor: pointer;
+}
+
+.footer-text {
+    color: white;
+    margin: 0 0 0 10px;
+}
+
+.footer-title {
+    color: #cc30ff;
+    margin: 10px 0 5px 0;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+@media (max-width: 411px) {
+    .footer-text {
+        margin: 20px auto 0 auto;
+    }
+    .footer-title {
+        text-align: center;
+    }
+    .footer-subtittle {
+        text-align: center;
+    }
+
+    .logo-soc {
+        margin: 0 auto;
+    }
+}
+
