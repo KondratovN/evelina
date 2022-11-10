@@ -542,15 +542,17 @@ body {
 }
 
 .card-button {
-    text-align: center;
     margin: 30px 0 20px 0;
     padding: 17px 0 17px 0;
     border-radius: 30px;
     font-size: 18px;
     color: white;
     background: #cc30ff;
+    text-align: center;
     width: 261px;
     cursor: pointer;
+    position: relative;
+    z-index: 2;
 }
 
 .card-button:hover {
